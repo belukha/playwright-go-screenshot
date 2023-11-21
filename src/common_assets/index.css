@@ -1,0 +1,27 @@
+:root {
+  font-family: -apple-system, Inter, sans-serif;
+
+  --brand_primary_800: #0656fe;
+  --brand_primary_500: #0c73fe;
+  --brand_primary_300: rgba(0, 133, 255, 0.57);
+  --brand_primary_200: rgba(5, 135, 255, 0.37);
+  --brand_primary_50: rgba(24, 128, 255, 0.16);
+  --brand_primary_25: rgba(0, 133, 255, 0.09);
+  --brand_secondary_800: #ff521f;
+  --brand_secondary_500: #ff6f32;
+  --brand_secondary_300: rgba(250, 87, 18, 0.6);
+  --brand_secondary_200: rgba(251, 88, 21, 0.45);
+  --brand_secondary_50: rgba(255, 104, 39, 0.12);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.content {
+  width: 450px;
+  height: 250px;
+  background-color: var(--brand_primary_800);
+  overflow: hidden;
+}
