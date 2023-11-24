@@ -10,7 +10,7 @@ import (
 
 type Screenshotter struct {
 	page              playwright.Page
-	screenshotOptions playwright.PageScreenshotOptions
+	screenshotOptions playwright.LocatorScreenshotOptions
 	baseUrl           string
 }
 
@@ -36,14 +36,14 @@ func buildBaseUrl() (*string, error) {
 	return &baseUrl, nil
 }
 
-func NewScreenshotter(screenshotOptions playwright.PageScreenshotOptions) *Screenshotter {
+func NewScreenshotter(options playwright.LocatorScreenshotOptions) *Screenshotter {
 	pw, err := playwright.Run()
 
 	if err != nil {
 		panic(err)
 	}
 
-	browser, err := pw.Chromium.Launch()
+	browser, err := pw.Firefox.Launch()
 
 	if err != nil {
 		panic(err)
@@ -63,7 +63,7 @@ func NewScreenshotter(screenshotOptions playwright.PageScreenshotOptions) *Scree
 
 	return &Screenshotter{
 		page:              page,
-		screenshotOptions: screenshotOptions,
+		screenshotOptions: options,
 		baseUrl:           *baseUrl,
 	}
 }
@@ -75,7 +75,7 @@ func (s *Screenshotter) Screenshot(templateName string) ([]byte, error) {
 		return nil, err
 	}
 
-	res, err := s.page.Screenshot(s.screenshotOptions)
+	res, err := s.page.Locator(".content").Screenshot(s.screenshotOptions)
 
 	if err != nil {
 		return nil, err

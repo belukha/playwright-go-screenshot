@@ -1,5 +1,10 @@
+@font-face {
+  font-family: Inter;
+  src: url("./Inter.ttf");
+}
+
 :root {
-  font-family: -apple-system, Inter, sans-serif;
+  font-family: Inter, sans-serif;
 
   --brand_primary_800: #0656fe;
   --brand_primary_500: #0c73fe;

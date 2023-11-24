@@ -21,17 +21,9 @@ func transformValues(values map[string][]string) map[string]string {
 func main() {
 	e := echo.New()
 
-	screenshotter := NewScreenshotter(
-		playwright.PageScreenshotOptions{
-			Type: playwright.ScreenshotTypePng,
-			Clip: &playwright.Rect{
-				X:      0,
-				Y:      0,
-				Width:  400,
-				Height: 200,
-			},
-		},
-	)
+	screenshotter := NewScreenshotter(playwright.LocatorScreenshotOptions{
+		Type: playwright.ScreenshotTypePng,
+	})
 
 	e.GET("/", func(c echo.Context) error {
 		template := c.QueryParam("template")
