@@ -1,0 +1,59 @@
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="../common_assets/index.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div class="content guides-content">
+      <div class="logo">
+        <img src="src/common_assets/salo-logo.svg" />
+      </div>
+      <div class="place-info">
+        <h1 class="title">
+          {{ prefix }}, <span class="title-name">{{ name }}</span>
+        </h1>
+        <div class="list">
+          {{#count}}
+          <div class="list-item">
+            <div class="list-icon">
+              <img src="src/guides/assets/places-count-icon.svg" />
+            </div>
+            <span class="list-text">{{ count }}</span>
+          </div>
+          {{/count}}
+
+          {{#walk}}
+          <div class="list-item">
+            <div class="list-icon">
+              <img src="src/guides/assets/walk-icon.svg" />
+            </div>
+            <span class="list-text">{{ walk }}</span>
+          </div>
+          {{/walk}}
+
+          {{#layer}}
+          <div class="list-item">
+            <div class="list-icon">
+              <img src="src/guides/assets/layer-icon.svg" />
+            </div>
+            <span class="list-text">{{ layer }}</span>
+          </div>
+          {{/layer}}
+
+          {{#location}}
+          <div class="list-item">
+            <div class="list-icon">
+              <img src="src/guides/assets/location-icon.svg" />
+            </div>
+            <span class="list-text">{{ location }}</span>
+          </div>
+          {{/location}}
+        </div>
+      </div>
+      <div class="image-wrap">
+        <img class="image" src="{{ image }}" />
+      </div>
+    </div>
+  </body>
+</html>
