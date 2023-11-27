@@ -1,0 +1,59 @@
+services:
+  grafana:
+    image: grafana/grafana:6.7.2
+    container_name: grafana
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+
+  prometheus:
+    image: prom/prometheus:v2.48.0
+    container_name: prometheus
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+      - '--web.enable-remote-write-receiver'
+    restart: unless-stopped
+    expose:
+      - 9090
+    ports:
+      - 9090:9090
+
+      #  nodeexporter:
+#    image: quay.io/prometheus/node-exporter:latest
+#    container_name: nodeexporter
+#    volumes:
+#      - '/:/host:ro,rslave'
+#    command:
+#      - '--path.rootfs=/host'
+#    restart: unless-stopped
+#    expose:
+#      - 9100
+#
+#  service:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    ports:
+#      - 1323:1323
+#    entrypoint: ./app
+
+volumes:
+  prometheus_data: {}
+  grafana_data: {}

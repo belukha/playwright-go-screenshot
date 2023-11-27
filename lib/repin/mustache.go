@@ -7,7 +7,7 @@ import (
 	"github.com/cbroglie/mustache"
 )
 
-func RenderIntoFile(template string, params map[string]string) error {
+func RenderIntoFile(template string, params map[string]string, filename string) error {
 	cwd, err := os.Getwd()
 
 	if err != nil {
@@ -22,7 +22,7 @@ func RenderIntoFile(template string, params map[string]string) error {
 		return err
 	}
 
-	file, err := os.Create(filepath.Join(cwd, srcPath, template, "index.html"))
+	file, err := os.Create(filepath.Join(cwd, srcPath, template, filename))
 
 	if err != nil {
 		return err

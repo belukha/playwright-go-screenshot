@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"time"
-
+	"github.com/google/uuid"
 	"github.com/labstack/echo/v4"
 	"github.com/playwright-community/playwright-go"
+	"os"
 )
 
 func transformValues(values map[string][]string) map[string]string {
@@ -28,23 +27,7 @@ func main() {
 	e.GET("/", func(c echo.Context) error {
 		template := c.QueryParam("template")
 
-		params := transformValues(c.QueryParams())
-
-		err := RenderIntoFile(template, params)
-
-		if err != nil {
-			return err
-		}
-
-		start := time.Now()
-		image, err := screenshotter.Screenshot(template)
-		elapsed := time.Since(start)
-
-		fmt.Println("Screenshot took", elapsed)
-
-		if err != nil {
-			return err
-		}
+		image, err := generateImage(screenshotter, template, c.QueryParams())
 
 		c.Response().Header().Set("Content-Type", "image/png")
 
@@ -58,4 +41,23 @@ func main() {
 	})
 
 	e.Logger.Fatal(e.Start(":1323"))
+}
+
+func generateImage(screenshotter *Screenshotter, template string, queryParams map[string][]string) ([]byte, error) {
+	params := transformValues(queryParams)
+
+	filename := uuid.New().String() + ".html"
+	err := RenderIntoFile(template, params, filename)
+	if err != nil {
+		return nil, err
+	}
+
+	image, err := screenshotter.Screenshot(template, filename)
+
+	errRemove := os.Remove("../../src/guides/" + filename)
+	if errRemove != nil {
+		return nil, errRemove
+	}
+
+	return image, err
 }

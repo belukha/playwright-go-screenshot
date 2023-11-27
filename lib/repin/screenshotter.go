@@ -68,8 +68,8 @@ func NewScreenshotter(options playwright.LocatorScreenshotOptions) *Screenshotte
 	}
 }
 
-func (s *Screenshotter) Screenshot(templateName string) ([]byte, error) {
-	_, err := s.page.Goto(fmt.Sprintf("%s/%s/index.html", s.baseUrl, templateName))
+func (s *Screenshotter) Screenshot(templateName string, filename string) ([]byte, error) {
+	_, err := s.page.Goto(fmt.Sprintf("%s/%s/%s", s.baseUrl, templateName, filename))
 
 	if err != nil {
 		return nil, err
