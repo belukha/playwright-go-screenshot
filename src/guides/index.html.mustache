@@ -51,8 +51,17 @@
           {{/location}}
         </div>
       </div>
+
+      {{#image}}
       <div class="image-wrap">
         <img class="image" src="{{ image }}" />
+      </div>
+      {{/image}}
+
+      <div class="images">
+        {{#images}}
+        <img class="image-4" src="{{.}}" />
+        {{/images}}
       </div>
     </div>
   </body>

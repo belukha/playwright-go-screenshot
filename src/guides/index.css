@@ -1,5 +1,10 @@
 @import "../common_assets/index.css";
 
+@font-face {
+  font-family: Stapel;
+  src: url("./assets/stapel_bold.ttf");
+}
+
 .guides-content {
   width: 1200px;
   height: 600px;
@@ -13,6 +18,7 @@
 }
 
 .title {
+  font-family: Stapel;
   font-size: 60px;
   line-height: 68px;
   font-weight: 700;
@@ -30,7 +36,7 @@
   width: 580px;
 
   position: absolute;
-  top: 192px;
+  bottom: 72px;
 }
 
 .image-wrap {
@@ -76,4 +82,26 @@
 .logo {
   position: absolute;
   top: 68px;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 420px;
+  height: 420px;
+  border: 16px solid white;
+  background: white;
+  justify-content: space-between;
+  align-content: space-between;
+  transform: rotate(-3deg);
+  position: absolute;
+  top: 89px;
+  right: 90px;
+}
+
+.image-4 {
+  width: 186px;
+  height: 186px;
 }
