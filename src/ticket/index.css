@@ -1,0 +1,112 @@
+@import "../common_assets/index.css";
+
+.content {
+  width: 1200px;
+  height: 627px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  line-height: 130%;
+  padding-top: 34px;
+
+  background: url("./assets/background.svg") no-repeat;
+  background-color: var(--brand_primary_500);
+}
+
+.ticket {
+  position: relative;
+  width: 1120px;
+  background: #fff;
+  padding: 48px 32px 32px 40px;
+  border-radius: 32px;
+  box-sizing: border-box;
+}
+
+.logo {
+  position: absolute;
+  box-sizing: border-box;
+  background: var(--brand_primary_500);
+  padding: 8px 24px 8px 22px;
+  border-radius: 24px;
+  width: 264px;
+  height: 68px;
+  border: 4px solid white;
+  top: -34px;
+  left: 24px;
+}
+
+.logo-image {
+  width: 210px;
+  height: 44px;
+}
+
+.title {
+  color: #fff;
+}
+
+.price {
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 130%;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logos {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 26px;
+}
+
+.avia-logo {
+  width: 60px;
+  height: 80px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.avia-logo-image {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  border-radius: 50%;
+  border: 6px solid white;
+}
+
+.direction {
+  display: inline-block;
+  background: var(--ink_50);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  border-radius: 14px;
+  padding: 4px 12px;
+  margin-top: 32px;
+}
+
+.flight-time {
+  display: flex;
+  flex-direction: row;
+  margin-top: 24px;
+}
+
+.time-interval {
+  margin-right: 73px;
+}
+
+.slash {
+  color: var(--ink_400);
+}
+
+.flight-date {
+  color: var(--ink_500);
+}

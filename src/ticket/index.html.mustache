@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../common_assets/index.css" />
+    <link rel="stylesheet" href="src/ticket/index.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="ticket">
+        <div class="logo">
+          <img class="logo-image" src="src/common_assets/salo-logo.svg" />
+        </div>
+        <div class="heading">
+          <div class="price">{{ price }}</div>
+          <div class="logos">
+            {{#logos}}
+            <div class="avia-logo">
+              <img class="avia-logo-image" src="{{.}}" />
+            </div>
+            {{/logos}}
+          </div>
+        </div>
+
+        <div class="direction">
+          <span>{{ origin }}</span> — <span>{{ destination }}</span>
+        </div>
+        <div class="flight-info">
+          <div class="flight-time">
+            <div class="time-interval">
+              {{ origin_time_start }} — {{ origin_time_end }}
+            </div>
+            <div>
+              <span>{{ origin_duration }}</span>
+              <span class="slash">/</span>
+              <span class="connection">{{ origin_connection }}</span>
+            </div>
+          </div>
+          <div class="flight-date">{{ origin_date }} {{ origin_weekday }}</div>
+        </div>
+        <div class="flight-info">
+          <div class="flight-time">
+            <div class="time-interval">
+              {{ dest_time_start }} — {{ dest_time_end }}
+            </div>
+            <div>
+              <span>{{ dest_duration }}</span>
+              <span class="slash">/</span>
+              <span class="connection">{{ dest_connection }}</span>
+            </div>
+          </div>
+          <div class="flight-date">{{ dest_date }} {{ dest_weekday }}</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
