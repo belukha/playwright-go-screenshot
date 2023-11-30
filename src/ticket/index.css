@@ -10,7 +10,7 @@
   justify-content: center;
   font-size: 44px;
   line-height: 130%;
-  padding-top: 34px;
+  padding-top: 28px;
 
   background: url("./assets/background.svg") no-repeat;
   background-color: var(--brand_primary_500);
@@ -58,12 +58,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
 }
 
 .logos {
+  position: absolute;
   display: flex;
   flex-direction: row-reverse;
   padding-right: 26px;
+  right: 0;
+  top: -6px;
 }
 
 .avia-logo {
