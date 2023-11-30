@@ -100,7 +100,22 @@
 }
 
 .time-interval {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  column-gap: 52px;
   margin-right: 73px;
+  font-weight: 600;
+}
+
+.time-interval::before {
+  content: "";
+  position: absolute;
+  background: url("./assets/dash.svg") no-repeat;
+  height: 80px;
+  width: 140px;
+  left: 129px;
+  top: -3px;
 }
 
 .slash {
@@ -109,4 +124,8 @@
 
 .flight-date {
   color: var(--ink_500);
+}
+
+.flight-info {
+  padding-left: 4px;
 }

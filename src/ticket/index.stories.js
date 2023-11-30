@@ -35,14 +35,14 @@ export const Ticket = {
     destination: "Токио",
     origin_time_start: "22:25",
     origin_time_end: "10:00",
-    origin_duration: "2 ч в пути",
+    origin_duration: "2ч в пути",
     origin_connection: "прямой",
     origin_date: "12 апр",
     origin_weekday: "вт",
 
     dest_time_start: "22:25",
     dest_time_end: "10:00",
-    dest_duration: "2 ч в пути",
+    dest_duration: "2ч в пути",
     dest_connection: "прямой",
     dest_date: "12 апр",
     dest_weekday: "вт",
@@ -51,5 +51,7 @@ export const Ticket = {
       "https://mpics.avs.io/al_square/64/64/EK.png",
       "https://mpics.avs.io/al_square/64/64/SU.png",
     ],
+
+    background: "src/ticket/assets/background.svg",
   },
 };
