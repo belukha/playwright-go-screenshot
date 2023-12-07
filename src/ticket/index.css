@@ -107,19 +107,8 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  column-gap: 52px;
   margin-right: 73px;
   font-weight: 600;
-}
-
-.time-interval::before {
-  content: "";
-  position: absolute;
-  background: url("./assets/dash.svg") no-repeat;
-  height: 80px;
-  width: 140px;
-  left: 129px;
-  top: -3px;
 }
 
 .slash {
@@ -132,4 +121,25 @@
 
 .flight-info {
   padding-left: 4px;
+}
+
+.time-start-wrap {
+  display: flex;
+  width: 175px;
+  position: relative;
+  margin-right: 4px;
+}
+
+.time-start {
+  margin-right: 4px;
+}
+
+.time-end {
+  width: 148px;
+}
+
+.time-dash {
+  background: url("./assets/dash.svg");
+  height: 80px;
+  flex-grow: 1;
 }

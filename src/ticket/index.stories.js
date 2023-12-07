@@ -40,8 +40,8 @@ export const Ticket = {
     origin_date: "12 апр",
     origin_weekday: "вт",
 
-    dest_time_start: "22:25",
-    dest_time_end: "10:00",
+    dest_time_start: "11:11",
+    dest_time_end: "11:11",
     dest_duration: "2ч в пути",
     dest_connection: "прямой",
     dest_date: "12 апр",

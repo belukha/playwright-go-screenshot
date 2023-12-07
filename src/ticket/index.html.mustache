@@ -28,8 +28,11 @@
         <div class="flight-info">
           <div class="flight-time">
             <div class="time-interval">
-              <span>{{ origin_time_start }}</span>
-              <span>{{ origin_time_end }}</span>
+              <span class="time-start-wrap">
+                <span class="time-start">{{ origin_time_start }}</span>
+                <span class="time-dash"></span>
+              </span>
+              <span class="time-end">{{ origin_time_end }}</span>
             </div>
             <div>
               <span>{{ origin_duration }}</span>
@@ -45,8 +48,11 @@
         <div class="flight-info">
           <div class="flight-time">
             <div class="time-interval">
-              <span>{{ dest_time_start }}</span>
-              <span>{{ dest_time_end }}</span>
+              <span class="time-start-wrap">
+                <span class="time-start">{{ dest_time_start }}</span>
+                <span class="time-dash"></span>
+              </span>
+              <span class="time-end">{{ dest_time_end }}</span>
             </div>
             <div>
               <span>{{ dest_duration }}</span>
