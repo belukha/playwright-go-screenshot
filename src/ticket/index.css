@@ -107,7 +107,7 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  margin-right: 73px;
+  margin-right: 32px;
   font-weight: 600;
 }
 
@@ -125,21 +125,21 @@
 
 .time-start-wrap {
   display: flex;
-  width: 175px;
+  width: 176px;
   position: relative;
-  margin-right: 4px;
+  margin-right: 6px;
 }
 
 .time-start {
-  margin-right: 4px;
+  margin-right: 6px;
 }
 
 .time-end {
-  width: 148px;
+  width: 140px;
 }
 
 .time-dash {
   background: url("./assets/dash.svg");
-  height: 80px;
+  height: 40px;
   flex-grow: 1;
 }
